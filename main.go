@@ -20,6 +20,7 @@ var addr = flag.String(
 var timer = promauto.NewHistogramVec(prometheus.HistogramOpts{
 		Name: "timer",
 		Buckets: []float64{.005, .01, .025, .05, .075, .1, .25, .5, .75, 1.0, 2.5, 5.0, 7.5, 10.0},
+		Help: "Front-end timer metrics.",
 	}, []string{"name", "api", "status"},
 )
 
